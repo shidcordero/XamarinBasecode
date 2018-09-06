@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage
+    xmlns:base="clr-namespace:XamarinBasecode.Core.Base"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamarinBasecode.Core.Views.SecondPage"
+    xmlns:res="clr-namespace:XamarinBasecode.Core.Resources;assembly=XamarinBasecode.Core"
+    xmlns:components="clr-namespace:XamarinBasecode.Core.Components"
+    xmlns:renderer="clr-namespace:XamarinBasecode.Core.CustomRenderer;assembly=XamarinBasecode.Core"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Title="Second">
+    <StackLayout>
+        <Label Text="{res:Translate StandardFieldTitle}" Font="Bold,20" />
+        <Entry Text="{Binding PersistentTextKey}"/>
+        <Label Text="{Binding MainPageButtonText}"/>
+
+        <Label Text="{res:Translate ComponentTitle}" Font="Bold,20" Margin="0,20,0,0"/>
+        <components:InlineEntry LabelValue="Remarks:" TextValue="Sample"/>
+
+        <Label Text="{res:Translate CustomRendererTitle}" Font="Bold,20" Margin="0,20,0,0" />
+        <renderer:CustomDatePicker Date="{Binding DateValue}" MinimumDate="{x:Static sys:DateTime.Now}" Format="MM/dd/yyyy" HasBackground="true" />
+
+        <Button Text="Back" Command="{Binding BackCommand}" Margin="50,0,50,0" />
+  </StackLayout>
+</base:BaseContentPage>
